@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Cấu hình Hibernate tự động tạo và cập nhật bảng -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Chọn MSSQL Server dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        
+        <!-- Cấu hình URL kết nối đến SQL Server với xác thực Windows -->
+        <property name="hibernate.connection.url">jdbc:sqlserver://THANHPHONG\\entha;databaseName=Cinestar2024DB;integratedSecurity=true;encrypt=true;trustServerCertificate=true</property>
+        
+        <!-- Chỉ định driver JDBC của MSSQL -->
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        
+        <!-- Đường dẫn đến file DLL cho xác thực Windows -->
+        <property name="hibernate.connection.integratedSecurity">C:\\path\\to\\sqljdbc_auth.dll</property>
+
+        <!-- Các thuộc tính bổ sung -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Thêm ánh xạ các thực thể (entities) -->
+        <mapping class="main.entities.Movie" />
+        <mapping class="main.entities.Director" />
+        <mapping class="main.entities.Account" />
+    </session-factory>
+</hibernate-configuration>

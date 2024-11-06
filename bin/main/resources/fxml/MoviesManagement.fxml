@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" style="-fx-background-color: #33FFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="your.package.MoviesManagementController">
+    <Label text="Movies Management" style="-fx-font-family: Arial; -fx-font-size: 18;" />
+    <TextField fx:id="movieNameField" promptText="Movie Name" style="-fx-font-family: Arial; -fx-font-size: 13;" />
+    <TextField fx:id="durationField" promptText="Duration" style="-fx-font-family: Arial; -fx-font-size: 13;" />
+    <TextField fx:id="actorField" promptText="Actor" style="-fx-font-family: Arial; -fx-font-size: 13;" />
+    <TextField fx:id="statusField" promptText="Status" style="-fx-font-family: Arial; -fx-font-size: 13;" />
+    <TextField fx:id="directorIDField" promptText="Director ID" style="-fx-font-family: Arial; -fx-font-size: 13;" />
+    <HBox spacing="5">
+        <Button text="Create" onAction="#handleCreateButton" />
+        <Button text="Update" onAction="#handleUpdateButton" />
+        <Button text="Delete" onAction="#handleDeleteButton" />
+        <Button text="Read" onAction="#handleReadButton" />
+    </HBox>
+    <TableView fx:id="moviesTable">
+        <TableColumn text="Movie ID" />
+        <TableColumn text="Movie Name" />
+        <TableColumn text="Duration" />
+        <TableColumn text="Actor" />
+        <TableColumn text="Status" />
+        <TableColumn text="Director ID" />
+    </TableView>
+</VBox>
